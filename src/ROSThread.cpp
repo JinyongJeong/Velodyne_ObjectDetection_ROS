@@ -15,7 +15,7 @@ ROSThread::ROSThread(QObject *parent, QMutex *th_mutex) :
 
 void ROSThread::ros_initialize(ros::NodeHandle &n)
 {
-    sub = n.subscribe<sensor_msgs::PointCloud2>("/velodyne_points", 2, boost::bind(&ROSThread::Velodyne_Callback, this, _1));
+    sub = n.subscribe<sensor_msgs::PointCloud2>("/velodyne_point_cloud", 2, boost::bind(&ROSThread::Velodyne_Callback, this, _1));
 }
 
 void ROSThread::run()
